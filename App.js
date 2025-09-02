@@ -6,7 +6,7 @@ import Calculadora from './Telas/Calculadora';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Calculadora />
+      <Biscoito />
     </View>
   );
 }
