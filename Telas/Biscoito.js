@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import {View, Text, Image, Button} from 'react-native'
 import Rodape from '../Componentes/Rodape'
 
-export default function Biscoito() {
+export default function Biscoito({route}) {
     const [mostra, setMostra] = useState(false)
     const [fraseInspiradora, setFraseInspiradora] = useState('')
-    
+    console.log(route.params)
     const executaAcao = function() {
         if(mostra) {
             setFraseInspiradora('')
@@ -26,7 +26,7 @@ export default function Biscoito() {
 
     return (
         <View>
-            <Text>Biscoito da Sorte</Text>
+            <Text>Olá {route.params.nome}!</Text>
             { mostra ? <Image source={require('../assets/biscoitoAberto.png')}/> : <Image source={require('../assets/biscoitoFechado.png')} />}
             <Text>{fraseInspiradora}</Text>
             <Button
