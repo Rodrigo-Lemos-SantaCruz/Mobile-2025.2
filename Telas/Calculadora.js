@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, Text, TextInput, Button} from 'react-native'
+import {View, Text, TextInput, Button, StyleSheet} from 'react-native'
 import Form from '../Componentes/Form'
 import Rodape from '../Componentes/Rodape'
 
@@ -15,7 +15,7 @@ export default function Calculadora() {
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <Form 
                 texto='Nota da Prova: ' 
                 funcao={setNotaProva} 
@@ -28,7 +28,7 @@ export default function Calculadora() {
                 title='Calcular'
                 onPress={()=>apertaBotao()}
             />
-            {aparece ? <Text>A sua nota final é {nota}</Text> : null}
+            {aparece ? <Text style={styles.resultado}>A sua nota final é {nota}</Text> : null}
             <Rodape 
                 img1={require('../assets/biscoito.png')}
                 img2={require('../assets/calculadora.png')}    
@@ -36,3 +36,20 @@ export default function Calculadora() {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fafafa',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    paddingBottom: 80, // evita sobreposição do rodapé
+  },
+  resultado: {
+    fontSize: 18,
+    marginTop: 20,
+    color: '#333',
+    fontWeight: 'bold',
+  },
+})

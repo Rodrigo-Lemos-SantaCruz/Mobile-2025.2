@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, Text, Image, Button} from 'react-native'
+import {View, Text, Image, Button, StyleSheet} from 'react-native'
 import Rodape from '../Componentes/Rodape'
 
 export default function Biscoito({route}) {
@@ -25,10 +25,10 @@ export default function Biscoito({route}) {
     }
 
     return (
-        <View>
-            <Text>Olá {route.params.nome}!</Text>
-            { mostra ? <Image source={require('../assets/biscoitoAberto.png')}/> : <Image source={require('../assets/biscoitoFechado.png')} />}
-            <Text>{fraseInspiradora}</Text>
+        <View style={styles.container}>
+            <Text style={styles.boasVindas}>Olá {route.params.nome}, vamos ler sua sorte?</Text>
+            { mostra ? <Image style={styles.imagem} source={require('../assets/biscoitoAberto.png')}/> : <Image style={styles.imagem} source={require('../assets/biscoitoFechado.png')} />}
+            <Text style={styles.frase}>{fraseInspiradora}</Text>
             <Button
                 title={mostra ? 'Reiniciar' : 'Abrir Biscoito'}
                 onPress={()=>executaAcao()}
@@ -40,3 +40,31 @@ export default function Biscoito({route}) {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fafafa',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  boasVindas: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#1976d2',
+  },
+  imagem: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
+    resizeMode: 'contain',
+  },
+  frase: {
+    fontSize: 18,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginBottom: 20,
+    color: '#333',
+  }
+})
