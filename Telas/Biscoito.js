@@ -1,25 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {View, Text, Image, Button, StyleSheet} from 'react-native'
 import Rodape from '../Componentes/Rodape'
 
 export default function Biscoito({route}) {
     const [mostra, setMostra] = useState(false)
     const [fraseInspiradora, setFraseInspiradora] = useState('')
-    console.log(route.params)
+    useEffect(()=>{
+      if (mostra) {
+        fetch('https://techy-api.vercel.app/api/json')
+          .then(resp => resp.json())
+          .then(obj => setFraseInspiradora(obj.message))
+          .catch(err => console.error('Erro: '+err))
+      }
+    }, [mostra])
     const executaAcao = function() {
         if(mostra) {
             setFraseInspiradora('')
-        }
-        else{
-            const frases = [
-                 "A persistência leva ao sucesso.",
-                 "Hoje é um bom dia para aprender algo novo.",
-                 "A prática leva à perfeição.",
-                 "Cada erro é uma oportunidade de aprendizado.",
-                 "Acredite no seu potencial."
-            ]
-            var posicao = Math.floor(Math.random() * frases.length)
-            setFraseInspiradora(frases[posicao])
         }
         setMostra(!mostra)
     }
