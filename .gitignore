@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules/
-
+Confs/firebase.js
 # Expo
 .expo/
 dist/
