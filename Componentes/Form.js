@@ -7,7 +7,7 @@ export default function Form({texto, funcao}) {
             <TextInput 
                 style={styles.input}
                 placeholder='Insira notas de 0 a 10'
-                onChangeText={(text)=>funcao(parseFloat(text))}
+                onChangeText={(text)=>funcao(text)}
             />
         </View>
     )
