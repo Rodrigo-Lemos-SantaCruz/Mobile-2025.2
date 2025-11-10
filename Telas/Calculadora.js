@@ -51,9 +51,10 @@ export default function Calculadora() {
                 onPress={()=>navigation.navigate('historico')}
             />
             {aparece ? <Text style={styles.resultado}>A sua nota final é {nota}</Text> : null}
-            <Rodape 
+            <Rodape
                 img1={require('../assets/biscoito.png')}
-                img2={require('../assets/calculadora.png')}    
+                img2={require('../assets/calculadora.png')}
+                img3={require('../assets/camera.png')}
             />
         </View>
     )

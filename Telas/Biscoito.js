@@ -32,6 +32,7 @@ export default function Biscoito({route}) {
             <Rodape
                 img1={require('../assets/biscoito.png')}
                 img2={require('../assets/calculadora.png')}
+                img3={require('../assets/camera.png')}
             />
         </View>
     )
