@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack';
 import Historico from './Telas/Historico';
 import Camera from './Telas/Camera';
+import Mapa from './Telas/Mapa';
 
 const Stack = createStackNavigator()
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen name="notas" component={Calculadora} options={{title: 'Flamengo Campeão!'}}/>
         <Stack.Screen name="historico" component={Historico} options={{title: 'Flamengo Campeão!'}}/>
         <Stack.Screen name="camera" component={Camera} options={{title: 'Flamengo Campeão!'}}/>
+        <Stack.Screen name="localizacao" component={Mapa} options={{title: 'Flamengo Campeão!'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

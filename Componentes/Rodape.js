@@ -1,7 +1,7 @@
 import {View, Image, Pressable, StyleSheet} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-export default function Rodape({img1, img2, img3}) {
+export default function Rodape({img1, img2, img3, img4}) {
     const navigation = useNavigation()
 
     return(
@@ -14,6 +14,9 @@ export default function Rodape({img1, img2, img3}) {
             </Pressable>
             <Pressable style={styles.botao} onPress={()=>navigation.navigate('camera')}>
                 <Image source={img3} style={styles.icone} />
+            </Pressable>
+            <Pressable style={styles.botao} onPress={()=>navigation.navigate('localizacao')}>
+                <Image source={img4} style={styles.icone} />
             </Pressable>
         </View>
     )
@@ -37,6 +40,7 @@ const styles = StyleSheet.create({
   },
   botao: {
     padding: 10,
+    paddingBottom: 20,
     borderRadius: 10,
   },
   icone: {

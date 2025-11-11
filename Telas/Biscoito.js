@@ -33,6 +33,7 @@ export default function Biscoito({route}) {
                 img1={require('../assets/biscoito.png')}
                 img2={require('../assets/calculadora.png')}
                 img3={require('../assets/camera.png')}
+                img4={require('../assets/map.jpg')}
             />
         </View>
     )

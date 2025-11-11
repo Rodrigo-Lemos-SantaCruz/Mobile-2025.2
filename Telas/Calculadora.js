@@ -52,10 +52,11 @@ export default function Calculadora() {
             />
             {aparece ? <Text style={styles.resultado}>A sua nota final é {nota}</Text> : null}
             <Rodape
-                img1={require('../assets/biscoito.png')}
-                img2={require('../assets/calculadora.png')}
-                img3={require('../assets/camera.png')}
-            />
+                            img1={require('../assets/biscoito.png')}
+                            img2={require('../assets/calculadora.png')}
+                            img3={require('../assets/camera.png')}
+                            img4={require('../assets/map.jpg')}
+                        />
         </View>
     )
 }
